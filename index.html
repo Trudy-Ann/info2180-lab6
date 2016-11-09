@@ -2,7 +2,9 @@
 <html>
 <body>
 
-  <button id="button" onclick="def">Search</button>
+    <p>Please click the search button</p>
+  <button id="button">Search</button>
+  
 
 <script>
     document.getElementById("button").addEventListener('click', function() {
@@ -28,7 +30,7 @@
             }
         };
         
-        httpRequest.open('GET',"https://ide.c9.io/summerstarchica/info2180-lab6", true);
+        httpRequest.open('GET',"https://info2180-lab6-summerstarchica.c9users.io/request.php?q=definition",true);
         httpRequest.send();
         
         

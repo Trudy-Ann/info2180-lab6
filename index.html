@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <button id="button" onclick="def">Search</button>
+
+<script>
+    document.getElementById("button").addEventListener('click', function() {
+        
+        if (window.XMLHttpRequest){
+            httpRequest = new XMLHttpRequest();
+        }
+        else if (window.ActiveObject) {
+             httpRequest = new ActiveObject ("Microsoft.XMLHTTP");
+        };
+        
+        
+        
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState == XMLHttpRequest.DONE){
+                if (httpRequest.status == 200){
+                    alert (httpRequest.responseText);
+                     
+                }
+                else {
+                    alert ("request could not be precessed");
+                }
+            }
+        };
+        
+        httpRequest.open('GET',"https://ide.c9.io/summerstarchica/info2180-lab6", true);
+        httpRequest.send();
+        
+        
+    });
+  
+        
+
+
+</script>
+</body>
+</html>
